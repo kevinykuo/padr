@@ -333,5 +333,5 @@ setOldClass(c("padded_df", "data.frame"))
 #' @export
 print.padded_df <- function(x, ...) {
   NextMethod(x)
-  interval_message(attr(x, "interval"))
+  if (!is.null(attr(x, "interval"))) interval_message(attr(x, "interval"))
 }
